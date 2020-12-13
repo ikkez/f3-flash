@@ -7,12 +7,12 @@
  * compliance with the license. Any of the license terms and conditions
  * can be waived if you get permission from the copyright holder.
  *
- * Copyright (c) 2015 ~ ikkez
+ * Copyright (c) 2020 ~ ikkez
  * Christian Knuth <ikkez0n3@gmail.com>
  * https://github.com/ikkez/F3-Sugar/
  *
- * @version 1.0.0
- * @date: 17.02.2017
+ * @version 1.0.2
+ * @date: 13.12.2020
  * @since: 21.01.2015
  **/
 
@@ -43,7 +43,7 @@ class Flash extends \Prefab {
 	 * @param string $status
 	 */
 	public function addMessage($text,$status='info') {
-		$this->msg[] = array('text'=>$text,'status'=>$status);
+		$this->msg[] = ['text'=>$text,'status'=>$status];
 	}
 
 	/**
@@ -53,14 +53,14 @@ class Flash extends \Prefab {
 	public function getMessages() {
 		$out = $this->msg;
 		$this->clearMessages();
-		return $out;
+		return $out ?: [];
 	}
 
 	/**
 	 * reset message stack
 	 */
 	public function clearMessages() {
-		$this->msg = array();
+		$this->msg = [];
 	}
 
 	/**
